@@ -10,14 +10,15 @@
 <body>
   <div id="app">
     <p>Hello</p>
-    <div>
-      <ul>
-        <li v-for="item in words">
-          <h1>{{ item }}</h1>
-        </li>
-      </ul>
-    </div>
+    <button v-on:click.prevent="start">Start</button>
+    <form v-for="item in words">
+      <p>{{item}}</p>
+      <input type="text" v-model="pop">
+    </form>
+    <button v-on:click.prevent="go">Go</button>
   </div>
+  
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="javascripts/app.js"></script>

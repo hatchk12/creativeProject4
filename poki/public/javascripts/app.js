@@ -6,22 +6,33 @@ var app = new Vue({
     words: [],
     lib: "" ,
     story: [],
+    title: "",
+    userWords: [],
     
   },
   methods: {
-    async getpokis() {
-      // `this` points to the vm instance
-      console.log("get pokis");
+    async start() {
+      console.log("get story");
       var url = "http://kitkatcode.com:4200/libz";
-      try {
-        let response = await axios.get(url);
-        this.lib = response.data;
-        console.log(this.lib);
-        return true;
-      }
-      catch (error) {
-        console.log(error);
-      }
+        fetch(url)
+        .then((response)=>{
+          return (response.json());
+        })
+        .then((json)=>{
+        console.log(json);
+        this.lib = json;
+        console.log(this.lib.blanks);
+        this.words = this.lib.blanks;
+        this.title = this.lib.title;
+        this.story = this.lib.value;
+      });
+     
     },
+    go(){
+      console.log(this.userWords);
+    },
+    pop(){
+      this.userWords = app.words;
+    }
   }
 });
