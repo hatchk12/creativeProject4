@@ -4,7 +4,8 @@ html, body, #app {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: helvetica;
+  font-family: cursive;
+  background-color:#fffdd0;
 }
 
 div, ul {
@@ -17,9 +18,7 @@ div, ul {
   height: 100%;
 }
 
-.no-pokemon {
-  background-color: #ED5565;
-}
+
 
 .center {
   display: flex;
@@ -28,23 +27,50 @@ div, ul {
   flex-wrap: wrap;
 }
 
-.h1 {
-  margin: 0;
-  color: white;
+
+
+h1{
+    text-align: center;
+  background-color:  #b19cd9;
+  padding:20px;
 }
 
-.pokemon {
-  padding: 20px;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-}
 
 .list {
   text-align: center;
   list-style: none;
   background-color: #4FC1E9;
   color: white;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    color:Black;
+    text-align: center;
+    text-decoration: none !important;
+    background-color: #aec6cf;
+}
+
+.story{
+  padding:20px;
+}
+
+p{
+  margin-bottom:0;
 }

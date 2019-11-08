@@ -8,7 +8,11 @@ var app = new Vue({
     story: [],
     title: "",
     userWords: [],
+    full: '    ',
     
+  },
+   created() {
+    this.start();
   },
   methods: {
     async start() {
@@ -19,20 +23,27 @@ var app = new Vue({
           return (response.json());
         })
         .then((json)=>{
-        console.log(json);
+        //console.log(json);
         this.lib = json;
-        console.log(this.lib.blanks);
+        console.log(this.lib.value);
         this.words = this.lib.blanks;
         this.title = this.lib.title;
         this.story = this.lib.value;
+        this.userWords.length=0;
+        this.full = "    ";
       });
      
     },
-    go(){
-      console.log(this.userWords);
+    go: function(){
+      this.full="    ";
+      this.userWords.push({value: ''});
+      //console.log(this.userWords);
+      var i;
+      for(i=0; i < this.words.length;i++){
+        this.full+=this.story[i]  + this.userWords[i];
+      }
+      this.full += this.story[this.story.length-2];
+      //console.log(this.full);
     },
-    pop(){
-      this.userWords = app.words;
-    }
   }
 });

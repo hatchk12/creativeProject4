@@ -8,16 +8,34 @@
 </head>
 
 <body>
-  <div id="app">
-    <p>Hello</p>
-    <button v-on:click.prevent="start">Start</button>
-    <form v-for="item in words">
-      <p>{{item}}</p>
-      <input type="text" v-model="pop">
-    </form>
-    <button v-on:click.prevent="go">Go</button>
+  <div>
+    <h1>Mad Libz Stories</h1>
   </div>
+   <hr>
+  <div id="app">
+    
   
+    <div class = row><form v-for="(item,index) in words">
+      <div class = column>
+      <p>{{item}}</p>
+      <input type="text" v-model="userWords[index]" >
+      </div>
+    </form>
+    </div>
+    <br>
+    <center><button @click="go">Submit</button>
+     <button v-on:click.prevent="start">New Story</button></center>
+     <hr>
+    <div>
+      <h1>Stories</h1>
+      <hr>
+      <p  class="story">{{full}}</p>
+    </div>
+    <br>
+  </div>
+  <div class="footer">
+  <a href="https://github.com/hatchk12/creativeProject4.git"><b>GitHub Link</b></a>
+  </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>

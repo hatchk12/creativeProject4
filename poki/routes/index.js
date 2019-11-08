@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 
 router.get('/libz', function(req, res,next) {
   console.log("In libz");
-  var madlibz = "http://madlibz.herokuapp.com/api/random";
+  var madlibz = "http://madlibz.herokuapp.com/api/random?minlength=5";
   console.log(madlibz);
   request(madlibz).pipe(res);
 });
